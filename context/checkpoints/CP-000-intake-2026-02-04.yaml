@@ -1,0 +1,71 @@
+# Checkpoint #0: Intake
+
+checkpoint:
+  id: "CP-000-intake-2026-02-04"
+  created_at: "2026-02-04 00:00:00"
+  created_by: "Orchestrator Agent"
+
+  phase: "Intake"
+  status: "completed"
+
+  summary: |
+    Проект "Вкус-Робот" успешно инициализирован.
+
+    Создан Product Brief с определением scope, целевой аудитории (50M+ домашних поваров),
+    модели монетизации (Freemium 149-299₽/мес), и платформы (Telegram WebApp).
+
+    Ключевые фичи: распознавание продуктов из фото, генерация рецептов через LLM,
+    пошаговые инструкции, адаптация под диеты, голосовое управление, интеграция с доставкой.
+
+    Tech stack: React (WebApp), Django (Backend), PostgreSQL, LangChain, Computer Vision.
+
+    Проект готов к переходу в фазу Discovery.
+
+  participating_agents:
+    - agent: "Orchestrator"
+      contribution: "Анализ идеи, создание Project Brief, инициализация контекста"
+
+  artifacts:
+    - path: "context/project-brief.yaml"
+      status: "created"
+      summary: "Полное описание проекта: цели, scope, tech stack, метрики"
+
+  decisions:
+    - id: "DEC-001"
+      decision: "Платформа — Telegram WebApp"
+      rationale: "Высокая проникновенность в РФ, быстрая отправка фото, голосовые команды, нет app store approval"
+      stakeholder: "Orchestrator"
+
+    - id: "DEC-002"
+      decision: "Модель монетизации — Freemium (149-299₽/мес)"
+      rationale: "Низкий барьер входа, монетизация через premium-фичи (КБЖУ, голос, доставка)"
+      stakeholder: "Orchestrator"
+
+    - id: "DEC-003"
+      decision: "MVP не включает нативное приложение и социальную сеть"
+      rationale: "Фокус на core value: рецепты из фото холодильника"
+      stakeholder: "Orchestrator"
+
+  next_actions:
+    - action: "Создать Vision Document"
+      agent: "Product"
+      priority: 1
+
+    - action: "Создать Product Requirements Document (PRD)"
+      agent: "Product"
+      priority: 2
+
+    - action: "Провести конкурентный анализ"
+      agent: "Research"
+      priority: 3
+
+    - action: "Определить Metrics Framework и Tracking Plan"
+      agent: "Analytics"
+      priority: 4
+
+  blockers: []
+
+  metrics:
+    completion_percentage: 100
+    documents_created: 1
+    decisions_made: 3

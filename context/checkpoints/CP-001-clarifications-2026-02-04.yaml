@@ -1,0 +1,96 @@
+# Checkpoint #1: Clarifications Received
+
+checkpoint:
+  id: "CP-001-clarifications-2026-02-04"
+  created_at: "2026-02-04 00:15:00"
+  created_by: "Orchestrator Agent"
+
+  phase: "Intake (Clarifications)"
+  status: "completed"
+
+  summary: |
+    Получены критические уточнения по бизнес-модели и техническим требованиям.
+
+    БИЗНЕС-МОДЕЛЬ:
+    - Подтверждена партнёрская программа с доставками (комиссия 3-5% с заказов)
+    - B2B направление (умная техника) НЕ в scope MVP
+    - Монетизация: Freemium + Partnership revenue
+
+    ПРОДУКТОВЫЕ ТРЕБОВАНИЯ:
+    - Диеты: расширено до 20 популярных диет (требуется исследование топ-20)
+    - Локализация: только RU (no EN в MVP)
+
+    ТЕХНИЧЕСКИЕ ТРЕБОВАНИЯ:
+    - LLM провайдер: OpenRouter (унифицированный доступ к GPT-4o, Claude, Gemini)
+    - SLA латентности: максимум 60 сек, целевой <30 сек
+
+    Project Brief обновлён, готов к переходу в Discovery.
+
+  participating_agents:
+    - agent: "Orchestrator"
+      contribution: "Обработка уточнений, обновление Project Brief"
+
+  artifacts:
+    - path: "context/project-brief.yaml"
+      status: "updated"
+      summary: "Добавлены партнёрская модель, уточнения по диетам, tech stack (OpenRouter), SLA"
+
+  decisions:
+    - id: "DEC-004"
+      decision: "Партнёрская программа с СберМаркет и Яндекс.Лавка (3-5% комиссия)"
+      rationale: "Дополнительный источник дохода + увеличение LTV через retention (пользователи заказывают недостающие продукты)"
+      stakeholder: "User"
+
+    - id: "DEC-005"
+      decision: "B2B направление (умная техника) НЕ в scope MVP"
+      rationale: "Фокус на B2C, минимизация complexity в MVP"
+      stakeholder: "User"
+
+    - id: "DEC-006"
+      decision: "До 20 диет в MVP (требуется исследование топ-20)"
+      rationale: "Широкий охват аудитории, конкурентное преимущество vs поисковики"
+      stakeholder: "User"
+
+    - id: "DEC-007"
+      decision: "Локализация только RU"
+      rationale: "Фокус на российский рынок, минимизация затрат на локализацию"
+      stakeholder: "User"
+
+    - id: "DEC-008"
+      decision: "LLM через OpenRouter (не прямой API OpenAI/Anthropic)"
+      rationale: "Гибкость выбора моделей, единая интеграция, cost optimization"
+      stakeholder: "User"
+
+    - id: "DEC-009"
+      decision: "SLA генерации рецепта: <60 сек (цель <30 сек)"
+      rationale: "Баланс UX и технической реализуемости (LLM latency + CV processing)"
+      stakeholder: "User"
+
+  next_actions:
+    - action: "Создать Vision Document"
+      agent: "Product"
+      priority: 1
+
+    - action: "Создать Product Requirements Document (PRD)"
+      agent: "Product"
+      priority: 2
+
+    - action: "Исследовать топ-20 популярных диет для интеграции"
+      agent: "Research"
+      priority: 3
+
+    - action: "Провести конкурентный анализ"
+      agent: "Research"
+      priority: 4
+
+    - action: "Определить Metrics Framework и Tracking Plan"
+      agent: "Analytics"
+      priority: 5
+
+  blockers: []
+
+  metrics:
+    completion_percentage: 100
+    documents_created: 0
+    documents_updated: 1
+    decisions_made: 6
