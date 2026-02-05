@@ -1,0 +1,9 @@
+# Локальный запуск и деплой на VPS (порт 8096 для nginx proxy)
+services:
+  frontend:
+    build: .
+    image: vkus-robot/frontend:latest
+    container_name: vkus-robot-frontend
+    ports:
+      - "127.0.0.1:8096:80"
+    restart: unless-stopped
